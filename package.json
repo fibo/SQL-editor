@@ -1,0 +1,36 @@
+{
+  "name": "SQL-editor",
+  "version": "0.0.0",
+  "private": true,
+  "description": "online SQL editor and beautifier",
+  "main": "index.js",
+  "scripts": {
+    "build": "browserify -e src/index.js -o bundle.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fibo/SQL-editor.git"
+  },
+  "keywords": [
+    "SQL",
+    "editor",
+    "online",
+    "beautifier"
+  ],
+  "author": {
+    "name": "Gianluca Casati",
+    "url": "http://g14n.info"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fibo/SQL-editor/issues"
+  },
+  "homepage": "https://github.com/fibo/SQL-editor#readme",
+  "dependencies": {
+    "sql92-json": "^0.5.0"
+  },
+  "devDependencies": {
+    "browserify": "^14.3.0"
+  }
+}

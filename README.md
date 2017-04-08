@@ -1,2 +1,5 @@
 # SQL-editor
-online SQL editor and beautifier
+
+> online SQL editor and beautifier
+
+

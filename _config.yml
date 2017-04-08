@@ -1,0 +1,6 @@
+exclude:
+  - npm-debug.log
+  - node_modules/
+  - README.md
+  - package.json
+  - src/

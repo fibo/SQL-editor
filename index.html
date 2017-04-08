@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+  <head>
+    <meta>
+    <title>SQL editor</title>
+    <style>
+      .sql-editor {
+        display: grid;
+        grid-gap: 10px;
+        align-items: stretch;
+      }
+
+      .viewable {
+        /** TODO tree view here */
+        display: none;
+        grid-row: 1;
+      }
+
+      div[contenteditable=true] {
+        background-color: cornsilk;
+        font-family: "Lucida Console", Monaco, monospace;
+        grid-row: 1;
+      }
+    </style>
+  </head>
+  <header><h1>SQL editor</h1></header>
+  <section class="sql-editor">
+    <div class="viewable">
+      <!-- tree view
+        <ul>
+          <li>
+          </li>
+        </ul>
+      -->
+    </div>
+    <div contenteditable="true">
+       /*
+       <br>
+         Edit your SQL here.
+       <br>
+       */
+    </div>
+  </section>
+
+  <script src="bundle.js"></script>
+  <script type="text/javascript" src="/js/google-analytics.js"></script>
+</html>
