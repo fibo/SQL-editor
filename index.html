@@ -16,32 +16,14 @@
         grid-row: 1;
       }
 
-      div[contenteditable=true] {
-        background-color: cornsilk;
-        font-family: "Lucida Console", Monaco, monospace;
+      .editable {
         grid-row: 1;
       }
     </style>
   </head>
-  <header><h1>SQL editor</h1></header>
-  <section class="sql-editor">
-    <div class="viewable">
-      <!-- tree view
-        <ul>
-          <li>
-          </li>
-        </ul>
-      -->
-    </div>
-    <div contenteditable="true">
-       /*
-       <br>
-         Edit your SQL here.
-       <br>
-       */
-    </div>
-  </section>
-
-  <script src="bundle.js"></script>
-  <script type="text/javascript" src="/js/google-analytics.js"></script>
+    <body>
+      <div id="root"></div>
+      <script src="bundle.js"></script>
+      <script type="text/javascript" src="/js/google-analytics.js"></script>
+    </body>
 </html>

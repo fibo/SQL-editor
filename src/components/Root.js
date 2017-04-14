@@ -1,12 +1,24 @@
-var Component = require('./Component')
+import React, { Component } from 'react'
+// import brace from 'brace'
+import AceEditor from 'react-ace'
 
-var Editable = require('./Editable')
+import 'brace/mode/sql'
+import 'brace/theme/github'
+
+function onChange (newValue) {
+  console.log('change', newValue)
+}
 
 class Root extends Component {
-  constructor (element, dispatch) {
-    super(element, dispatch)
-
-    this.component.Editable = new Editable(element.querySelector('div[contenteditable=true]'), dispatch)
+  render () {
+    return (
+      <AceEditor
+        mode='sql'
+        theme='github'
+        onChange={onChange}
+        editorProps={{$blockScrolling: true}}
+      />
+    )
   }
 }
 

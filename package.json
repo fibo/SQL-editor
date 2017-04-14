@@ -8,7 +8,7 @@
     "build": "browserify -e src/index.js -o bundle.js",
     "check-deps": "npm outdated",
     "lint": "standard",
-    "start": "budo src/index.js --serve bundle.js --dir . --live --open",
+    "start": "budo src/index.js --serve bundle.js --dir . --live --open -- -t babelify",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "pre-commit": [
@@ -35,12 +35,12 @@
   },
   "homepage": "http://g14n.info/SQL-editor",
   "dependencies": {
-    "sql92-json": "^0.5.0"
+    "react-ace": "^4.2.1",
+    "sql92-json": "^0.6.0"
   },
   "devDependencies": {
-    "browserify": "^14.3.0",
-    "budo": "^9.4.7",
     "pre-commit": "^1.2.2",
-    "standard": "^10.0.2"
+    "standard": "^10.0.2",
+    "zeroconf-redux": "^0.12.4"
   }
 }
