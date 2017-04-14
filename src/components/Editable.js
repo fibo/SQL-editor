@@ -1,17 +1,27 @@
 var Component = require('./Component')
+var TABKEY = 9
 
 class Editable extends Component {
   constructor (element, dispatch) {
     super(element)
 
-    function onCopy () {}
-    element.onCopy = onCopy
+    function oncopy () {}
+    element.oncopy = oncopy
 
-    function onKeyup () {}
-    element.onkeyup = onKeyup
+    function onkeydown (event) {
+      var keyCode = event.keyCode
 
-    function onPaste () {}
-    element.onPaste = onPaste
+//      console.log(event.keyCode)
+
+      // Prevent TABKEY to exit from content editable area.
+      if (keyCode === TABKEY) {
+        event.preventDefault()
+      }
+    }
+    element.onkeydown = onkeydown
+
+    function onpaste () {}
+    element.onpaste = onpaste
   }
 }
 

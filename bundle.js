@@ -59,7 +59,11 @@ class Editable extends Component {
     function onCopy () {}
     element.onCopy = onCopy
 
-    function onKeyup () {}
+    function onKeyup (event) {
+      console.log(event)
+    }
+
+    console.log(element)
     element.onkeyup = onKeyup
 
     function onPaste () {}
@@ -93,7 +97,7 @@ module.exports = getInitialState
 
 },{}],6:[function(require,module,exports){
 var app = require('./app')
-
+console.log('ok')
 window.addEventListener('load', app())
 
 },{"./app":1}],7:[function(require,module,exports){
