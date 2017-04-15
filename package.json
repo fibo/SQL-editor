@@ -35,7 +35,7 @@
   },
   "homepage": "http://g14n.info/SQL-editor",
   "dependencies": {
-    "sql92-json": "^0.5.0"
+    "sql92-json": "^0.6.0"
   },
   "devDependencies": {
     "browserify": "^14.3.0",
