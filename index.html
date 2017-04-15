@@ -45,6 +45,14 @@
         font-family: "Lucida Console", Monaco, monospace;
         grid-row: 1;
       }
+
+      div[contenteditable=true]:focus {
+        outline: 1px solid whitesmoke;
+
+        -webkit-box-shadow: 3px 4px 16px 0px rgba(0, 0, 0, 0.5);
+           -moz-box-shadow: 3px 4px 16px 0px rgba(0, 0, 0, 0.5);
+                box-shadow: 3px 4px 16px 0px rgba(0, 0, 0, 0.5);
+      }
     </style>
   </head>
   <header><h1>SQL editor</h1></header>
