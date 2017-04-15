@@ -20,7 +20,17 @@ class Editable extends Component {
     }
     element.onkeydown = onkeydown
 
-    function onpaste () {}
+    function onpaste (event) {
+      event.preventDefault()
+
+      var clipboardData = event.clipboardData || window.clipboardData
+      var pastedData = clipboardData.getData('Text')
+
+      // TODO see how to get cursor position
+      // http://stackoverflow.com/a/4770562/1217468
+      element.innerHTML = element.innerHTML + pastedData
+    }
+
     element.onpaste = onpaste
   }
 }
