@@ -53,7 +53,7 @@ function app (initialState) {
 
 module.exports = app
 
-},{"./components/Root":8,"./getInitialState":9,"./reducer":11}],6:[function(require,module,exports){
+},{"./components/Root":8,"./getInitialState":10,"./reducer":12}],6:[function(require,module,exports){
 class Component {
   constructor (element, dispatch) {
     this.element = element
@@ -171,30 +171,57 @@ module.exports = Editable
 },{"./Component":6,"sql92-json/src/dataTypes.json":1,"sql92-json/src/functions.json":2,"sql92-json/src/keywords.json":3,"sql92-json/src/logicalOperators.json":4}],8:[function(require,module,exports){
 var Component = require('./Component')
 
-var Editable = require('./Editable')
+var SQLEditor = require('./SQLEditor')
 
 class Root extends Component {
   constructor (element, dispatch) {
     super(element, dispatch)
 
-    this.component.Editable = new Editable(element.querySelector('div[contenteditable=true]'), dispatch)
+    this.component.SQLEditor = new SQLEditor(element.querySelector('.sql-editor'), dispatch)
   }
 }
 
 module.exports = Root
 
-},{"./Component":6,"./Editable":7}],9:[function(require,module,exports){
+},{"./Component":6,"./SQLEditor":9}],9:[function(require,module,exports){
+var Component = require('./Component')
+
+var Editable = require('./Editable')
+
+var bannerWidth = 300
+
+class SQLEditor extends Component {
+  constructor (element, dispatch) {
+    super(element, dispatch)
+
+    function resize () {
+      var padding = 5
+      var width = window.innerWidth - bannerWidth - 2 * padding
+      element.style.width = width + 'px'
+    }
+
+    resize()
+
+    window.addEventListener('resize', resize)
+
+    this.component.Editable = new Editable(element.querySelector('div[contenteditable=true]'), dispatch)
+  }
+}
+
+module.exports = SQLEditor
+
+},{"./Component":6,"./Editable":7}],10:[function(require,module,exports){
 function getInitialState () {
   return {}
 }
 
 module.exports = getInitialState
 
-},{}],10:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 var app = require('./app')
 window.addEventListener('load', app())
 
-},{"./app":5}],11:[function(require,module,exports){
+},{"./app":5}],12:[function(require,module,exports){
 // var sql = require('sql92-json')
 
 function reducer (currenState, action) {
@@ -212,4 +239,4 @@ function reducer (currenState, action) {
 
 module.exports = reducer
 
-},{}]},{},[10]);
+},{}]},{},[11]);

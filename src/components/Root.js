@@ -1,12 +1,12 @@
 var Component = require('./Component')
 
-var Editable = require('./Editable')
+var SQLEditor = require('./SQLEditor')
 
 class Root extends Component {
   constructor (element, dispatch) {
     super(element, dispatch)
 
-    this.component.Editable = new Editable(element.querySelector('div[contenteditable=true]'), dispatch)
+    this.component.SQLEditor = new SQLEditor(element.querySelector('.sql-editor'), dispatch)
   }
 }
 
