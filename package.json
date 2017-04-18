@@ -40,6 +40,7 @@
   "devDependencies": {
     "browserify": "^14.3.0",
     "budo": "^9.4.7",
+    "dot-editorconfig": "^0.4.0",
     "pre-commit": "^1.2.2",
     "standard": "^10.0.2"
   }
