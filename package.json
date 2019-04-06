@@ -6,14 +6,12 @@
   "main": "index.js",
   "scripts": {
     "build": "browserify -e src/index.js -o bundle.js",
-    "check-deps": "npm outdated",
     "lint": "standard",
     "start": "budo src/index.js --serve bundle.js --dir . --live --open",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "pre-commit": [
-    "lint",
-    "check-deps"
+    "lint"
   ],
   "repository": {
     "type": "git",
